@@ -11,16 +11,16 @@ require 'hoe'
 include FileUtils
 require File.join(File.dirname(__FILE__), 'lib', 'casclient', 'version')
 
-AUTHOR = ["Matt Zukowski", "Matt Walker"]  # can also be an array of Authors
+AUTHOR = ["Matt Zukowski", "Matt Walker", "Niklas E. Cathor"]  # can also be an array of Authors
 EMAIL = "matt at roughest dot net"
-DESCRIPTION = "Client library for the Central Authentication Service (CAS) protocol."
-GEM_NAME = "rubycas-client" # what ppl will type to install your gem
+DESCRIPTION = "Client library for the Central Authentication Service (CAS) protocol. (this version specially prepared for echologic)"
+GEM_NAME = "echocas-client" # what ppl will type to install your gem
 RUBYFORGE_PROJECT = "rubycas-client" # The unix name for your project
 HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
 
 ENV['NODOT'] = '1'
 
-NAME = "rubycas-client"
+NAME = "echocas-client"
 REV = nil
 #REV = `svn info`[/Revision: (\d+)/, 1] rescue nil
 VERS = ENV['VERSION'] || (CASClient::VERSION::STRING + (REV ? ".#{REV}" : ""))
@@ -58,6 +58,6 @@ end
 
 desc 'Build and install rubycas-client'
 task :install do
-  system "gem build rubycas-client.gemspec"
-  system "sudo gem install rubycas-client-#{VERS}.gem"
+  system "gem build echocas-client.gemspec"
+  system "sudo gem install echocas-client-#{VERS}.gem"
 end
